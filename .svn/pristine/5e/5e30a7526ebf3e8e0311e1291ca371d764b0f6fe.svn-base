@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>镇江新时代文明实践大数据中心</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/animate.min.css" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="container" id="app" v-cloak>
+        <!-- 头部 -->
+        <header class="animated fadeInDown">
+            <div class="titleBox">
+                <div class="title">镇江新时代文明实践大数据中心</div>
+                <div class="focus"></div>
+            </div>
+            <div class="date">{{currentDate}}</div>
+        </header>
+
+        <!-- 主体部分 -->
+        <main class="main">
+            <div class="main_left">
+                <!-- 数据统计 -->
+                <div class="statistics animated bounceInLeft">
+                    <ul>
+                        <li>
+                            <span class="statistics_name">中心</span>
+                            <span class="statistics_count" ref="centerCount" :data-endvalue="statistics.center">0</span>
+                        </li>
+                        <li>
+                            <span class="statistics_name">实践所</span>
+                            <span class="statistics_count" ref="placeCount" :data-endvalue="statistics.place">0</span>
+                        </li>
+                        <li>
+                            <span class="statistics_name">实践站</span>
+                            <span class="statistics_count" ref="stationCount"
+                                :data-endvalue="statistics.station">0</span>
+                        </li>
+                        <li>
+                            <span class="statistics_name">工作人员</span>
+                            <span class="statistics_count" ref="personnelCount"
+                                :data-endvalue="statistics.personnel">0</span>
+                        </li>
+                        <li>
+                            <span class="statistics_name">志愿者队伍</span>
+                            <span class="statistics_count" ref="teamCount" :data-endvalue="statistics.team">0</span>
+                        </li>
+                        <li>
+                            <span class="statistics_name">志愿者总数</span>
+                            <span class="statistics_count">{{statistics.totalNumber}}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 地图 -->
+                <div class="map animated bounceInLeft">
+                    <!-- 地图容器 -->
+                    <div id="map_container"></div>
+                    <!-- 右侧数据展示 -->
+                    <div class="showData">
+                        <div class="border">
+                            <div class="color_blue dataCount" v-html="areaPlace">0</div>
+                            <div class="line"></div>
+                            <div class="dataName color_blue">实践所</div>
+                            <i class="border_after"></i><i class="border_before"></i>
+                        </div>
+                        <div class="border">
+                            <div class="color_blue dataCount" v-html="areaStation">0</div>
+                            <div class="line"></div>
+                            <div class="dataName color_blue">实践站</div>
+                            <i class="border_after"></i><i class="border_before"></i>
+                        </div>
+                        <div class="border">
+                            <div class="color_blue dataCount" v-html="areaPersonnel">0</div>
+                            <div class="line"></div>
+                            <div class="dataName color_blue">工作人员</div>
+                            <i class="border_after"></i><i class="border_before"></i>
+                        </div>
+                        <div class="border">
+                            <div class="color_blue dataCount" v-html="areaTotalNumber">0</div>
+                            <div class="line"></div>
+                            <div class="dataName color_blue">志愿者</div>
+                            <i class="border_after"></i><i class="border_before"></i>
+                        </div>
+                        <div class="border">
+                            <div class="color_blue dataCount" v-html="areaActivity">0</div>
+                            <div class="line"></div>
+                            <div class="dataName color_blue">实践活动</div>
+                            <i class="border_after"></i><i class="border_before"></i>
+                        </div>
+                    </div>
+                    <!-- 加载loading -->
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+            <div class="main_right">
+                <div class="mr_top animated bounceInRight">
+                    <div class="pieBox point">
+                        <i class="point_after"></i><i class="point_before"></i>
+                        <div id="pieChart" style="width:100%;height:100%;"></div>
+                    </div>
+                    <div class="totalTraffic boxShadow">
+                        <span>平台访问量</span>
+                        <span v-html="platform">0</span>
+                    </div>
+                    <div class="terminalTraffic">
+                        <div class="stb" v-html="stb">0</div>
+                        <div class="mobile" v-html="mobile">0</div>
+                    </div>
+                </div>
+                <div class="activity point animated bounceInRight">
+                    <i class="point_after"></i><i class="point_before"></i>
+                    <div class="activityBox">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="main_name">
+                                        <h3>进行中文明实践活动</h3>
+                                    </div>
+                                    <div class="activityList">
+                                        <div class="activity_left">
+                                            <div class="trafficType">参与人数</div>
+                                            <ul>
+                                                <li v-for="(item, index) in popularLeft" :key="index">
+                                                    <div class="activity_title">
+                                                        <span>{{item.sort}}</span>
+                                                        <p>{{item.organizationName}}-{{item.activityTitle}}</p>
+                                                    </div>
+                                                    <div class="participants">{{item.count}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="activity_right">
+                                            <div class="trafficType">参与人数</div>
+                                            <ul>
+                                                <li v-for="(item, index) in popularRight" :key="index">
+                                                    <div class="activity_title">
+                                                        <span>{{item.sort}}</span>
+                                                        <p>{{item.organizationName}}-{{item.activityTitle}}</p>
+                                                    </div>
+                                                    <div class="participants">{{item.count}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="main_name">
+                                        <h3>最受欢迎的实践活动</h3>
+                                    </div>
+                                    <div class="activityList">
+                                        <div class="activity_left">
+                                            <div class="trafficType">参与人数</div>
+                                            <ul>
+                                                <li v-for="(item, index) in processingLeft" :key="index">
+                                                    <div class="activity_title">
+                                                        <span>{{item.sort}}</span>
+                                                        <p>{{item.organizationName}}-{{item.activityTitle}}</p>
+                                                    </div>
+                                                    <div class="participants">{{item.count}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="activity_right">
+                                            <div class="trafficType">参与人数</div>
+                                            <ul>
+                                                <li v-for="(item, index) in processingRight" :key="index">
+                                                    <div class="activity_title">
+                                                        <span>{{item.sort}}</span>
+                                                        <p>{{item.organizationName}}-{{item.activityTitle}}</p>
+                                                    </div>
+                                                    <div class="participants">{{item.count}}</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ranking point animated bounceInRight">
+                    <i class="point_after"></i><i class="point_before"></i>
+                    <div class="main_name">
+                        <h3>各实践所实践活动排名</h3>
+                    </div>
+                    <div id="barChart" style="width:100%;height:98%;"></div>
+                </div>
+                <div class="team point animated bounceInRight">
+                    <i class="point_after"></i><i class="point_before"></i>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="main_name">
+                                    <h3>明星志愿者团队</h3>
+                                </div>
+                                <div class="teamList">
+                                    <ul>
+                                        <li v-for="(item, index) in starTeam" :key="index">
+                                            <img :src="item.poster" alt="">
+                                            <p>{{item.teamName}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="main_name">
+                                    <h3>明星实践站</h3>
+                                </div>
+                                <div class="stationList">
+                                    <ul>
+                                        <li v-for="(item, index) in starStation" :key="index">
+                                            <div class="stationName">{{item.stationName}}</div>
+                                            <div class="stationInfo">
+                                                <p>积分：{{item.integral}}</p>
+                                                <p>活动：{{item.activityCount}}</p>
+                                            </div>
+                                            <div class="cornerMark">
+                                                <div class="cornerMark_Num">{{item.sort}}</div>
+                                                <div class="cornerMark_bg"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+<script src="https://webapi.amap.com/maps?v=1.4.12&key=1dfa089fa6ede166181769de85624f13&plugin=AMap.DistrictSearch">
+</script>
+<script src="https://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/vue.min.js"></script>
+<script src="./js/axios.js"></script>
+<script src="./js/countUp.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

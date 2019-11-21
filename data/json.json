@@ -1,0 +1,320 @@
+{
+	"code": "0",
+	"message": "成功",
+	"cloudInfo": {
+		"statistics": {
+			"center": 6,
+			"place": 46,
+			"station": 684,
+			"point": 2933,
+			"personnel": 4102,
+			"team": 4133,
+			"totalNumber": "34.8w"
+		},
+		"areaInfo": [{
+				"name": "句容市",
+				"adcode": "321183",
+				"place": 12,
+				"station": 176,
+				"point": 838,
+				"personnel": 1227,
+				"totalNumber": "10w",
+				"activity": 3584
+			},
+			{
+				"name": "丹阳市",
+				"adcode": "321181",
+				"place": 11,
+				"station": 152,
+				"point": 767,
+				"personnel": 1054,
+				"totalNumber": "8w",
+				"activity": 3067
+			},
+			{
+				"name": "丹徒区",
+				"adcode": "321112",
+				"place": 10,
+				"station": 142,
+				"point": 685,
+				"personnel": 874,
+				"totalNumber": "7.6w",
+				"activity": 2436
+			},
+			{
+				"name": "扬中市",
+				"adcode": "321182",
+				"place": 6,
+				"station": 106,
+				"point": 324,
+				"personnel": 477,
+				"totalNumber": "5.7w",
+				"activity": 1287
+			},
+			{
+				"name": "京口区",
+				"adcode": "321102",
+				"place": 4,
+				"station": 63,
+				"point": 167,
+				"personnel": 281,
+				"totalNumber": "2.2w",
+				"activity": 798
+			},
+			{
+				"name": "润州区",
+				"adcode": "321111",
+				"place": 3,
+				"station": 45,
+				"point": 113,
+				"personnel": 189,
+				"totalNumber": "1.3w",
+				"activity": 459
+			}
+		],
+		"itemAccess": {
+			"all": "1.2w",
+			"each": [{
+					"name": "理论宣讲",
+					"value": 80
+				},
+				{
+					"name": "教育服务",
+					"value": 80
+				},
+				{
+					"name": "文化服务",
+					"value": 80
+				},
+				{
+					"name": "科技科普",
+					"value": 80
+				},
+				{
+					"name": "健康体育",
+					"value": 80
+				}
+			]
+		},
+		"platform": "55,666",
+		"stb": "602,525",
+		"mobile": "88,522",
+		"popularActivity": [{
+				"activityTitle": "消防讲座",
+				"count": 1001,
+				"organizationName": "句容",
+				"sort": 1
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 2
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 3
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 4
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 5
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 996,
+				"organizationName": "句容",
+				"sort": 6
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 7
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 8
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 9
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 10
+			}
+		],
+		"processingActivity": [{
+				"activityTitle": "消防讲座",
+				"count": 1001,
+				"organizationName": "句容",
+				"sort": 1
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 2
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 3
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 4
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 5
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 996,
+				"organizationName": "句容",
+				"sort": 6
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 7
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 8
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 9
+			},
+			{
+				"activityTitle": "消防讲座",
+				"count": 1000,
+				"organizationName": "句容",
+				"sort": 10
+			}
+		],
+		"ranking": [{
+				"name": "下蜀镇",
+				"value": 662
+			},
+			{
+				"name": "宝华镇",
+				"value": 1120
+			},
+			{
+				"name": "二圣镇",
+				"value": 1211
+			},
+			{
+				"name": "大卓镇",
+				"value": 1275
+			},
+			{
+				"name": "高桥镇",
+				"value": 1334
+			},
+			{
+				"name": "辛丰镇",
+				"value": 1420
+			},
+			{
+				"name": "古阳镇",
+				"value": 2120
+			},
+			{
+				"name": "上党镇",
+				"value": 2220
+			},
+			{
+				"name": "宝堰镇",
+				"value": 2800
+			},
+			{
+				"name": "新镇",
+				"value": 2998
+			}
+		],
+		"starTeam": [{
+				"teamName": "后白镇志愿者团队",
+				"poster": "./images/poster.png"
+			},
+			{
+				"teamName": "边城镇志愿者团队",
+				"poster": "./images/poster.png"
+			},
+			{
+				"teamName": "宝华镇志愿者团队",
+				"poster": "./images/poster.png"
+			},
+			{
+				"teamName": "上党镇志愿者团队",
+				"poster": "./images/poster.png"
+			}
+		],
+		"starStation": [{
+				"stationName": "下甸村",
+				"integral": 185,
+				"activityCount": 800,
+				"sort": 1
+			},
+			{
+				"stationName": "二圣村",
+				"integral": 173,
+				"activityCount": 741,
+				"sort": 2
+			},
+			{
+				"stationName": "新街街道",
+				"integral": 155,
+				"activityCount": 583,
+				"sort": 3
+			},
+			{
+				"stationName": "新街街道",
+				"integral": 155,
+				"activityCount": 583,
+				"sort": 4
+			},
+			{
+				"stationName": "新街街道",
+				"integral": 155,
+				"activityCount": 583,
+				"sort": 5
+			},
+			{
+				"stationName": "新街街道",
+				"integral": 155,
+				"activityCount": 583,
+				"sort": 6
+			}
+		]
+	}
+}
